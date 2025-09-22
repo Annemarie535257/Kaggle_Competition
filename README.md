@@ -8,16 +8,16 @@ This project addresses the critical challenge of air quality prediction in Beiji
 
 **Problem**: Predict PM2.5 concentrations with RMSE < 4000 (ideally < 3000)  
 **Solution**: Two-layer LSTM neural network with advanced feature engineering  
-**Result**: RMSE of 63.66 
+**Result**: RMSE of 70.03 
 
-## 🎯 Key Achievements
+##  Key Achievements
 
-- ✅ **Exceptional Performance**: RMSE 63.66
+- ✅ **Exceptional Performance**: RMSE 63.6670.03
 - ✅ **Stable Training**: Resolved NaN issues with optimized architecture
 - ✅ **Robust Preprocessing**: KNN imputation and cyclical temporal encoding
 - ✅ **Production Ready**: 13,148 predictions generated for Kaggle submission
 
-## 🏗️ Model Architecture
+## 🏗 Model Architecture
 
 ```
 Sequential([
@@ -34,7 +34,7 @@ Sequential([
 **Total Parameters**: 24,641 trainable parameters  
 **Training Time**: ~18 epochs with early stopping
 
-## 🔬 Technical Approach
+## Technical Approach
 
 ### Data Preprocessing
 - **Temporal Features**: Cyclical encoding for hour, day, month patterns
@@ -52,7 +52,7 @@ Sequential([
 
 | Metric | Value | Target | Status |
 |--------|-------|--------|--------|
-| **Training RMSE** | 63.66 | < 4000 | 98.4% |
+| **Training RMSE** | 70.03 | 4000-5000 | 88.4% |
 | **Model Parameters** | 24,641 | - | Efficient |
 | **Training Epochs** | 18 | 50 max | Early stopping |
 | **Convergence** | Stable | No NaN | Success |
@@ -81,7 +81,6 @@ pip install tensorflow pandas numpy scikit-learn matplotlib seaborn
 ├── air_quality_forecasting_starter_code.ipynb  # Main notebook
 ├── train.csv                                   # Training data (30,676 samples)
 ├── test.csv                                    # Test data (13,148 samples)
-├── sample_submission.csv                       # Submission format
 ├── submission.csv                              # Generated predictions
 └── README.md                                   # This file
 ```
@@ -106,7 +105,7 @@ pip install tensorflow pandas numpy scikit-learn matplotlib seaborn
 |--------------|---------------|----------|------|--------|
 | Single LSTM(50) | 0.001 | Basic (11) | 4,200+ | Failed - NaN |
 | Bidirectional LSTM + GRU | 0.0003 | Enhanced (23) | NaN | Failed - NaN |
-| **LSTM(64) + LSTM(32)** | **0.001** | **Enhanced (23)** | **63.66** | **✅ Success** |
+| **LSTM(64) + LSTM(32)** | **0.001** | **Enhanced (23)** | **70.03** | **✅ Success** |
 | LSTM(32) + LSTM(16) | 0.001 | Enhanced (23) | 89.45 | Success |
 | LSTM + Dense(64) | 0.001 | Enhanced (23) | 67.23 | Success |
 
